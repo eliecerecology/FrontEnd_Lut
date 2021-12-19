@@ -30,8 +30,30 @@ $background-opacity: 0.5;
   }
 }
 
-@mixin mediaSm {
+//for small screens
+@mixin mediaSmall {
   @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+//for medium screens
+@mixin mediaMedium {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+//for small screens
+@mixin mediaLarge {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+//for small screens
+@mixin mediaXlarge {
+  @media screen and (min-width: 1171px) {
     @content;
   }
 }
