@@ -75,7 +75,7 @@
   //Branding side
   &-branding {
     background: $primary-color;
-    transform: translate3d(0, 100, 0);
+    transform: translate3d(0, -100%, 0);
     @include easeOut;
 
     &.show {
@@ -83,11 +83,49 @@
       transform: translate3d(0, 0, 0);
     }
     .portrait {
-      width: 250px;
-      height: 250px;
+      width: 220px;
+      height: 220px;
       background: url("../img/portrait3.png");
-      border-radius: 50%;
-      border: solid 3px $third-color;
+      border-radius: 70%;
+      border: solid 5px $third-color;
     }
+  }
+
+  .nav-item {
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
+
+    &.show {
+      //slide from the right
+      transform: translate3d(0, 0, 0);
+    }
+    // color the
+    &.current > a {
+      color: $secondary-color;
+    }
+  }
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    //adding transition
+    @include easeOut;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+// DELAY 0.15 s
+
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
   }
 }
