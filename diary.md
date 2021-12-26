@@ -17,3 +17,14 @@
 
 - I learnt to separate the main.scss file in serveral ones: one for functions, and the other for specific functionalities. Also how to select DOM elements using javascript.
   New javascript functions were presented such as transpose and translate.
+
+## Day 4: 19th December 2021
+
+- create functions to adjust automatically the color
+  and function to adjust the components when the screen has less resolution in "\_mobile.scss"
+  I started to give some personalization to the project, my idea is create a front-web page to insert some AI
+  functionality related to parse tables as CSV from pdfs
+
+## Day 5: 26th December 2021
+
+- I started to learn the grid, or how to organize the components in the space
