@@ -159,15 +159,15 @@ main {
 
 .about-info {
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 20px;
   grid-template-areas: "pdf-image select" "job2 job3";
-  grid-template-columns: repeat(2, 1fr); }
+  grid-template-columns: repeat(1, 1fr); }
   .about-info .pdf-image {
     grid-area: pdf-image;
     margin: auto;
-    transform: scale(0.8, 0.8);
-    border-radius: 20%;
-    border: #a86363 30px solid; }
+    transform: scale(0.5, 0.5);
+    border-radius: 10%;
+    border: #a86363 20px solid; }
   .about-info .job2 {
     grid-area: job2; }
   .about-info .job3 {
@@ -177,17 +177,34 @@ main {
     padding: 0.5rem;
     border-bottom: #a86363 5px solid; }
 
-.projects {
+.summarization {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(3, 1fr); }
-  .projects img {
+  .summarization img {
     width: 100%;
     border: 3px #fff solid; }
-    .projects img:hover {
+    .summarization img:hover {
       opacity: 0.5;
-      border-color: secondary-color;
+      border-color: #a86363;
       transition: all 0.5s ease-out; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #a86363;
+    color: set-text-color #a86363; }
+
+.btn-dark {
+  background: black;
+  color: #fff; }
+
+.btn-light {
+  background: #c4c4c4;
+  color: #fff; }
 
 #main-footer {
   text-align: center;
@@ -195,6 +212,14 @@ main {
   background: #2b2b2b;
   color: #fff;
   height: 60px; }
+
+@media screen and (min-width: 1171px) {
+  .summarization {
+    grid-template-columns: repeat(4, 1fr); } }
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .summarization {
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -221,8 +246,12 @@ main {
     transform: translate3d(100%, 0, 0); }
   .about-info {
     grid-template-areas: "pdf-image" "select" "job2" "job3";
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  .summarization {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
-    margin-top: 10vh; } }
+    margin-top: 10vh; }
+  .summarization {
+    grid-template-columns: 1fr; } }

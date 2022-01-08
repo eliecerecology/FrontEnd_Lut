@@ -75,21 +75,22 @@ main {
 }
 
 //TEXTRACT ROUTE
-//GRID
+//GRID -> textract.html
 .about-info {
+  // this is the div of the image
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 20px;
   grid-template-areas:
     "pdf-image select"
     "job2 job3";
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 
   .pdf-image {
     grid-area: pdf-image;
     margin: auto;
-    transform: scale(0.8, 0.8);
-    border-radius: 20%;
-    border: $secondary-color 30px solid;
+    transform: scale(0.5, 0.5);
+    border-radius: 10%;
+    border: $secondary-color 20px solid;
   }
 
   .job2 {
@@ -107,8 +108,8 @@ main {
   }
 }
 
-// Work/projects
-.projects {
+// Work/summarization -> textSummari.html
+.summarization {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: repeat(3, 1fr);
@@ -119,11 +120,37 @@ main {
 
     &:hover {
       opacity: 0.5;
-      border-color: secondary-color;
+      border-color: $secondary-color;
       @include easeOut;
     }
   }
 }
+
+//Button styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color ($secondary-color);
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #fff;
+}
+
 #main-footer {
   text-align: center;
   padding: 1rem;
